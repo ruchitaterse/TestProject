@@ -45,6 +45,8 @@ public class MinervaHomePage extends TestBase{
 				System.out.println(columns);
 			}else {
 				System.out.println("Some error as occurred");
+				
+				
 			}
 			//homepage.click();
 			}
