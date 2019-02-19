@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Data driven basics]">
+  <test thread-count="5" name="LoginTest(failed)">
+    <classes>
+      <class name="com.automation.testcases.MinervaLoginPage">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.automation.testcases.MinervaLoginPage -->
+    </classes>
+  </test> <!-- LoginTest(failed) -->
+</suite> <!-- Failed suite [Data driven basics] -->
