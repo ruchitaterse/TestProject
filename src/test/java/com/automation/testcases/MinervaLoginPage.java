@@ -21,7 +21,7 @@ import com.automation.utilities.ExcelUtility;
 public class MinervaLoginPage extends TestBase {
 
 	@Test
-	public void login() throws IOException {
+	public void loginPage() throws IOException {
 		
 		String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\excel\\TestData.xlsx";
 		String fileName = "TestData.xlsx";
@@ -66,12 +66,12 @@ public class MinervaLoginPage extends TestBase {
 				} else if (driver.findElement(By.id(or.getProperty("loginNameReqrd"))).isDisplayed()) {
 					log.debug("Username & Password can not be blank");
 					System.out.print(driver.findElement(By.id(or.getProperty("loginNameReqrd"))).getText() + " and ");
-					System.out.println(" " + driver.findElement(By.id(or.getProperty("pswdReqrd"))).getText()
+					System.err.println(" " + driver.findElement(By.id(or.getProperty("pswdReqrd"))).getText()
 							+ " : Username & Password can not be blank");
 				} else {
 					log.debug("Invalid Credentials...Please try again later");
 					WebElement invalidMsg = driver.findElement(By.id(or.getProperty("invalidloginMsg")));
-					System.out.println(invalidMsg.getText());
+					System.err.println(invalidMsg.getText());
 				}
 
 			}

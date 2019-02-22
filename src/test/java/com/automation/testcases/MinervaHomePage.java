@@ -1,5 +1,10 @@
 package com.automation.testcases;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -8,56 +13,61 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.automation.base.TestBase;
+import com.automation.utilities.CaptureScreenshot;
 
-
-public class MinervaHomePage extends TestBase{
-	@Test(dataProvider="getDataProvider")
-	public void homePage(String searchKeyword , String searchKey) {
+public class MinervaHomePage extends TestBase {
+	
+	@Test()
+	public void homePage() throws Exception {
 		driver.findElement(By.id(or.getProperty("UsernameID"))).sendKeys(config.getProperty("ValidUserName"));
 		driver.findElement(By.id(or.getProperty("passwordID"))).sendKeys(config.getProperty("ValidPassWord"));
 		driver.findElement(By.id(or.getProperty("signInID"))).click();
 		WebElement homepage = driver.findElement(By.id(or.getProperty("Home")));
-		if(homepage.isDisplayed()) {
+		if (homepage.isDisplayed()) {
 			System.out.println("We are on Home Page");
 			log.debug("We are on Home Page...!!!");
-			int i=1;
-			if(searchKeyword != null && searchKey != null) {
-			WebElement getText = driver.findElement(By.id(or.getProperty("inputText")));
-			getText.sendKeys(searchKeyword);
-			WebElement search = driver.findElement(By.id(or.getProperty("searchButtonID")));
-			search.click();
-			String Title ="Search Colleagues";
-			System.out.println(driver.getTitle());
-			if(driver.getTitle().contains(Title)) {
-				System.out.println("We are redirected to search result page");
-				log.debug("We are redirected to search result page...!!!");
-				WebElement table = driver.findElement(By.id(or.getProperty("searchResultTable")));
-				List<WebElement> row = table.findElements(By.className("dxgvDataRow_Glass"));
-				int rows = table.findElements(By.className("dxgvDataRow_Glass")).size();
-				System.out.println(rows);
-				List<WebElement> col = table.findElements(By.className("dxgv"));
-				
-				for(WebElement object : col) {
-					System.out.println(object.getText());
-				}
-			
-				int columns = col.size();
-				System.out.println(columns);
-			}else {
-				System.out.println("Some error as occurred");
-				
-				
-			}
-			//homepage.click();
-			}
-		}
-		else {
-			System.out.println("Some error occurred");
-		}
-		
-	}
 
-	
-	
-	
+			String textFile = System.getProperty("user.dir") + "\\src\\test\\resources\\excel\\TestDataSearch.txt";
+			FR = new FileReader(textFile);
+			BR = new BufferedReader(FR);
+			ArrayList<String> abc = new ArrayList<String>();
+			String Content = null;
+			int i = 0;
+			while ((Content = BR.readLine()) != null) {
+				abc.add(i, Content);
+
+				WebElement getText = driver.findElement(By.id(or.getProperty("inputText")));
+				getText.sendKeys(abc.get(i));
+				System.out.println("We are searching for : "+abc.get(i));
+				WebElement search = driver.findElement(By.id(or.getProperty("searchButtonID")));
+				search.click();
+				String Title = "Search Colleagues";
+				if (driver.getTitle().contains(Title)) {
+					System.out.println("We are redirected to search result page");
+					log.debug("We are redirected to search result page...!!!");
+
+					try {
+						if (driver.findElement(By.xpath(or.getProperty("errorText"))).isDisplayed()
+								|| driver.findElement(By.className("dxgvDataRow_Glass")).isDisplayed()) {
+
+							if (driver.findElement(By.xpath(or.getProperty("errorText"))).isDisplayed()) {
+								System.out.print("Result for : ");
+								System.err.println(abc.get(i));
+								System.err.println(driver.findElement(By.xpath(or.getProperty("errorText"))).getText()+" Please enter valid data");
+							}
+						}
+					} catch (Exception e) {
+						String filePath = "C:\\Users\\ruchitat\\Desktop\\Ruchita\\Screenshot\\SearchResult.png";
+						CaptureScreenshot.takeSnapShot(driver, filePath );
+						System.out.println("Result for : "+abc.get(i));
+						System.out.println("Screenshot captured at mentioned location : " + config.getProperty("Screenshot_Path"));
+					}
+
+				}
+				driver.findElement(By.id(or.getProperty("Home"))).click();
+			}
+			
+		}
+
+	}
 }

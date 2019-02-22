@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Data driven basics">
+
+	<listeners>
+	<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+	<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+	</listeners>
 	<test thread-count="5" name="Login Test">
 		<classes>
-			<class name="com.framework.testcases.MinervaLoginPage" />
+			<class name="com.automation.testcases.MinervaLoginPage" />
 		</classes>
 	</test> <!-- Test -->
 
 	<test thread-count="5" name="Reset password Test">
 		<classes>
-			<class name="com.framework.testcases.ResetPasswordPage" />
+			<class name="com.automation.testcases.ResetPasswordPage" />
 		</classes>
 	</test> <!-- Test -->
 
 	<test thread-count="5" name="Home page Test">
 		<classes>
-			<class name="com.framework.testcases.MinervaHomePage" />
+			<class name="com.automation.testcases.MinervaHomePage" />
+		</classes>
+	</test> <!-- Test -->
+	
+	<test thread-count="5" name="ReMS page Test">
+		<classes>
+			<class name="com.automation.testcases.MinervaReMSPage" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

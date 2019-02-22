@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import com.automation.base.TestBase;
@@ -37,12 +37,13 @@ public class ResetPasswordPage extends TestBase {
 			driver.findElement(By.name(or.getProperty("submitName"))).click();
 			if(driver.findElement(By.id(or.getProperty("loginnameReqrd"))).isDisplayed() || driver.findElement(By.id(or.getProperty("invalidUserID"))).isDisplayed()) {
 				if(driver.findElement(By.id(or.getProperty("loginnameReqrd"))).isDisplayed()) {
-				System.out.println(driver.findElement(By.id(or.getProperty("loginnameReqrd"))).getText()+" : "+abc.get(i)+" Username can not be blank");
-				
+				System.err.println(driver.findElement(By.id(or.getProperty("loginnameReqrd"))).getText()+" : "+abc.get(i)+" Username can not be blank");
+				Reporter.log("Username can not be blank");
 				log.debug("Username can not be blank...!!!");
 			}
 				else {
-					System.out.println(driver.findElement(By.id(or.getProperty("invalidUserID"))).getText()+" : "+abc.get(i));
+					System.err.println(driver.findElement(By.id(or.getProperty("invalidUserID"))).getText()+" : "+abc.get(i));
+					Reporter.log("Invalid username");
 					log.debug("Invalid username...!!!");
 				}
 			

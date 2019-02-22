@@ -1,5 +1,8 @@
 package com.automation.rough;
 
+import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Graphics;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,34 +19,15 @@ import org.testng.annotations.Test;
 import com.automation.base.TestBase;
 
 public class TestProperties extends TestBase{
-
-
-			@Test(dataProvider="getDataProvider")
-			public void getF(String Username, String password) {
-				System.out.println(Username);
-				System.out.println(password);
-			}
+	
+	/*	
+	public void paint(Graphics g) {
+		g.setColor(Color.red);
+		g.drawString("Hello World !!!", 20 , 100);
 		
-			@DataProvider
-			public Object[][] getDataProvider(){
-			Object[][] data = new Object[2][2];
-			data[0][0]="rulihilk";
-			data[0][1]="chjkhkjh";
-			data[1][0]="itj,gk,kj";
-			data[1][1]="aajkhjkhjk";
-			for (int i = 0; i < 2; i++) { 
-			
-				for (int j = 0; j < 2; j++) {
-					
-					System.out.println(data[i][j]);
-					j++;
-					System.out.println(data[i][j]);
-					j++;
-				}
-			}
-			return data;
-	}
-	}
-
-
-
+		
+	}*/
+		public static void main(String[] args) {
+			System.err.println("weudyuhsd");
+		}
+}
