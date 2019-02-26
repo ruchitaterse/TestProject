@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Data driven basics]">
-  <test thread-count="5" name="LoginTest(failed)">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="com.automation.listeners.CustomListener"/>
+  </listeners>
+  <test thread-count="5" name="Home page Test(failed)">
     <classes>
-      <class name="com.automation.testcases.MinervaLoginPage">
+      <class name="com.automation.testcases.MinervaHomePage">
+        <methods>
+          <include name="homePage"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="preRequist"/>
+        </methods>
+      </class> <!-- com.automation.testcases.MinervaHomePage -->
+    </classes>
+  </test> <!-- Home page Test(failed) -->
+  <test thread-count="5" name="ReMS page Test(failed)">
+    <classes>
+      <class name="com.automation.testcases.MinervaReMSPage">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="login"/>
+          <include name="remsPage"/>
+          <include name="preRequist"/>
         </methods>
-      </class> <!-- com.automation.testcases.MinervaLoginPage -->
+      </class> <!-- com.automation.testcases.MinervaReMSPage -->
     </classes>
-  </test> <!-- LoginTest(failed) -->
+  </test> <!-- ReMS page Test(failed) -->
 </suite> <!-- Failed suite [Data driven basics] -->

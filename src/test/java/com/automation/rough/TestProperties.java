@@ -17,6 +17,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.automation.base.TestBase;
+import com.automation.utilities.CaptureScreenshot;
 
 public class TestProperties extends TestBase{
 	
@@ -27,7 +28,8 @@ public class TestProperties extends TestBase{
 		
 		
 	}*/
-		public static void main(String[] args) {
-			System.err.println("weudyuhsd");
+		public static void main(String[] args) throws Exception {
+			System.out.println(config.getProperty("fileName"));
+			
 		}
 }

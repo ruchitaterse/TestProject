@@ -12,6 +12,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Reporter;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -42,6 +43,7 @@ public class MinervaLoginPage extends TestBase {
 		int rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum();
 		int i = 0;
 		log.debug("Inside Login Test...!!!");
+		
 		for (i = 0; i <= rowCount; i++) {
 			driver.get(config.getProperty("Url"));
 			WebElement userName = driver.findElement(By.id(or.getProperty("UsernameID")));
@@ -62,6 +64,7 @@ public class MinervaLoginPage extends TestBase {
 
 				if (Title.contains(driver.getTitle())) {
 					System.out.println("Login successful");
+					Reporter.log("Login successful...!!!");
 					log.debug("Login successful...!!!");
 				} else if (driver.findElement(By.id(or.getProperty("loginNameReqrd"))).isDisplayed()) {
 					log.debug("Username & Password can not be blank");

@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.automation.testcases.MinervaReMSPage">
+      <class name="com.automation.testcases.MinervaHomePage">
         <methods>
+          <include name="homePage"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="remsPage"/>
           <include name="preRequist"/>
         </methods>
-      </class> <!-- com.automation.testcases.MinervaReMSPage -->
+      </class> <!-- com.automation.testcases.MinervaHomePage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -8,21 +8,39 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="7">Data driven basics</th></tr>
-<tr><td><a href="#t0">Login Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">5,041</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">Reset password Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">1,963</td><td></td><td></td></tr>
-<tr><td><a href="#t2">Home page Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">14,345</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t3">ReMS page Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">2,311</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">4</th><th class="num">0</th><th class="num">0</th><th class="num">23,660</th><th colspan="2"></th></tr>
+<tr><th colspan="7">Default suite</th></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">13,032</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Data driven basics</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Login Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.automation.testcases.MinervaLoginPage</td><td><a href="#m0">loginPage</a></td><td rowspan="1">1550749227964</td><td rowspan="1">4909</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">Reset password Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.automation.testcases.ResetPasswordPage</td><td><a href="#m1">resetPassword</a></td><td rowspan="1">1550749232995</td><td rowspan="1">1863</td></tr></tbody>
-<tbody id="t2"><tr><th colspan="4">Home page Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.automation.testcases.MinervaHomePage</td><td><a href="#m2">homePage</a></td><td rowspan="1">1550749234960</td><td rowspan="1">14253</td></tr></tbody>
-<tbody id="t3"><tr><th colspan="4">ReMS page Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.automation.testcases.MinervaReMSPage</td><td><a href="#m3">remsPage</a></td><td rowspan="1">1550749249366</td><td rowspan="1">2166</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.automation.testcases.MinervaHomePage</td><td><a href="#m0">homePage</a></td><td rowspan="1">1551079390049</td><td rowspan="1">12853</td></tr></tbody>
 </table>
-<h2>Login Test</h2><h3 id="m0">com.automation.testcases.MinervaLoginPage#loginPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Reset password Test</h2><h3 id="m1">com.automation.testcases.ResetPasswordPage#resetPassword</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">Invalid username<br/>Invalid username<br/>Username can not be blank<br/>Invalid username</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Home page Test</h2><h3 id="m2">com.automation.testcases.MinervaHomePage#homePage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>ReMS page Test</h2><h3 id="m3">com.automation.testcases.MinervaReMSPage#remsPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Default test</h2><h3 id="m0">com.automation.testcases.MinervaHomePage#homePage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Failed
+	at org.testng.Assert.fail(Assert.java:96)
+	at com.automation.testcases.MinervaHomePage.homePage(MinervaHomePage.java:71)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

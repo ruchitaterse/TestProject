@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="14.253">
+           time="14.932">
   <properties />
   
   
-            <testcase name="homePage" time="14.253" classname="com.automation.testcases.MinervaHomePage" />
+            <testcase name="homePage" time="14.932" classname="com.automation.testcases.MinervaHomePage" />
       
 </testsuite>

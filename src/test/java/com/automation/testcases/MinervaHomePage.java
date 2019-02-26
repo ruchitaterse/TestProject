@@ -9,6 +9,8 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -22,6 +24,7 @@ public class MinervaHomePage extends TestBase {
 		driver.findElement(By.id(or.getProperty("UsernameID"))).sendKeys(config.getProperty("ValidUserName"));
 		driver.findElement(By.id(or.getProperty("passwordID"))).sendKeys(config.getProperty("ValidPassWord"));
 		driver.findElement(By.id(or.getProperty("signInID"))).click();
+		
 		WebElement homepage = driver.findElement(By.id(or.getProperty("Home")));
 		if (homepage.isDisplayed()) {
 			System.out.println("We are on Home Page");
@@ -57,13 +60,15 @@ public class MinervaHomePage extends TestBase {
 							}
 						}
 					} catch (Exception e) {
-						String filePath = "C:\\Users\\ruchitat\\Desktop\\Ruchita\\Screenshot\\SearchResult.png";
-						CaptureScreenshot.takeSnapShot(driver, filePath );
+						
 						System.out.println("Result for : "+abc.get(i));
-						System.out.println("Screenshot captured at mentioned location : " + config.getProperty("Screenshot_Path"));
+						CaptureScreenshot.takeSnapShot("error.png");
+						
+						
 					}
 
 				}
+				Assert.fail("Failed");
 				driver.findElement(By.id(or.getProperty("Home"))).click();
 			}
 			

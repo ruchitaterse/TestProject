@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.automation.base.TestBase;
@@ -37,6 +38,7 @@ public class MinervaReMSPage extends TestBase {
 		System.err.println(errormsg.getText());
 		WebElement cancel = driver.findElement(By.id(or.getProperty("cancel")));
 		cancel.click();
+		
 	}
 
 }
